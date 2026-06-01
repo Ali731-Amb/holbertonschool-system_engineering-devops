@@ -1,0 +1,23 @@
+flowchart TD
+    USER["👤 User\ntypes www.foobar.com"]
+
+    DNS["🌐 DNS\nwww → A record → 8.8.8.8"]
+
+    USER -->|"DNS lookup"| DNS
+    DNS -->|"HTTP request to 8.8.8.8"| NGINX
+
+    subgraph SERVER["🖥️ Server — IP: 8.8.8.8"]
+        NGINX["Nginx\nWeb server\nReceives requests, serves static files"]
+        APP["Application server\nExecutes business logic"]
+        CODE["Codebase\nApp files"]
+        DB["MySQL\nDatabase"]
+
+        NGINX -->|"forwards dynamic requests"| APP
+        APP --> CODE
+        APP -->|"SQL queries"| DB
+    end
+
+    NGINX -->|"HTTP response"| USER
+
+    ISSUES["⚠️ Issues: SPOF · Downtime on deploy · Cannot scale"]
+    SERVER -.-> ISSUES

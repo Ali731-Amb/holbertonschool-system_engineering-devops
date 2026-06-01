@@ -1,0 +1,38 @@
+flowchart TD
+    USER["👤 User\ntypes www.foobar.com"]
+    DNS["🌐 DNS\nwww → A record → 8.8.8.8"]
+    LB["⚖️ Load Balancer — HAProxy\nAlgorithm: Round Robin\nSetup: Active-Active"]
+
+    USER -->|"DNS lookup"| DNS
+    DNS -->|"HTTP request to 8.8.8.8"| LB
+
+    subgraph S1["🖥️ Server 1"]
+        NGINX1["Nginx\nWeb server"]
+        APP1["Application server\nBusiness logic"]
+        CODE1["Codebase\nApp files"]
+        DB1["MySQL — Primary\nHandles all WRITES"]
+
+        NGINX1 -->|"dynamic requests"| APP1
+        APP1 --> CODE1
+        APP1 -->|"WRITE"| DB1
+    end
+
+    subgraph S2["🖥️ Server 2"]
+        NGINX2["Nginx\nWeb server"]
+        APP2["Application server\nBusiness logic"]
+        CODE2["Codebase\nApp files"]
+        DB2["MySQL — Replica\nHandles READ only"]
+
+        NGINX2 -->|"dynamic requests"| APP2
+        APP2 --> CODE2
+        APP2 -->|"READ only"| DB2
+    end
+
+    LB -->|"request 1, 3, 5..."| NGINX1
+    LB -->|"request 2, 4, 6..."| NGINX2
+
+    DB1 -->|"replication\nsync data"| DB2
+
+    ISSUES["⚠️ Issues\nSPOF: HAProxy + Primary DB · No firewall · No HTTPS · No monitoring"]
+    LB -.-> ISSUES
+	
