@@ -43,7 +43,7 @@ Design a one-server web infrastructure hosting `www.foobar.com`.
 
 Components: 1 server, Nginx, application server, codebase, MySQL, domain name with www A record pointing to IP `8.8.8.8`.
 
-**Screenshot**: [![insert link here]([https://imgur.com/a/3eCjUe8](https://i.imgur.com/NwvRXLY.jpeg))]
+**Screenshot**: [![insert link here]([https://imgur.com/a/3eCjUe8](https://i.imgur.com/NwvRXLY.jpeg))
 
 ---
 
@@ -52,7 +52,7 @@ Design a three-server web infrastructure hosting `www.foobar.com`.
 
 Components: 1 HAProxy load balancer (Round Robin, Active-Active), 2 servers each with Nginx, application server, codebase and MySQL (Primary-Replica cluster).
 
-**Screenshot**: [![insert link here]([https://imgur.com/a/STBm4u5](https://i.imgur.com/B9mrijS.png))]
+**Screenshot**: [![insert link here]([https://imgur.com/a/STBm4u5](https://i.imgur.com/B9mrijS.png))
 
 ---
 
@@ -61,7 +61,7 @@ Design a secured, encrypted and monitored three-server infrastructure hosting `w
 
 Components: 3 firewalls, 1 SSL certificate (HTTPS), 3 monitoring clients reporting to Sumo Logic.
 
-**Screenshot**: [![insert link here](h[ttps://imgur.com/a/mxjLxbm](https://i.imgur.com/znGAq7O.png))]
+**Screenshot**: [![insert link here](h[ttps://imgur.com/a/mxjLxbm](https://i.imgur.com/znGAq7O.png))
 
 ---
 
@@ -70,7 +70,7 @@ Design a scaled infrastructure with split components and a redundant load balanc
 
 Components: 1 additional server, HAProxy cluster (Active-Passive), dedicated servers for web server (Nginx), application server and database (MySQL).
 
-**Screenshot**: [![insert link here]([https://imgur.com/a/ikexDUI](https://i.imgur.com/et12krx.png))]
+**Screenshot**: [![insert link here]([https://imgur.com/a/ikexDUI](https://i.imgur.com/et12krx.png))
 
 ---
 
