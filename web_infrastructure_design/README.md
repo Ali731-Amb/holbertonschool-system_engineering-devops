@@ -61,7 +61,7 @@ Design a secured, encrypted and monitored three-server infrastructure hosting `w
 
 Components: 3 firewalls, 1 SSL certificate (HTTPS), 3 monitoring clients reporting to Sumo Logic.
 
-**Screenshot**: [![insert link here](https://i.imgur.com/znGAq7O.png)
+**Screenshot**: [![insert link here](https://i.imgur.com/XPLmVXc.png)
 
 ---
 
