@@ -52,7 +52,7 @@ Design a three-server web infrastructure hosting `www.foobar.com`.
 
 Components: 1 HAProxy load balancer (Round Robin, Active-Active), 2 servers each with Nginx, application server, codebase and MySQL (Primary-Replica cluster).
 
-**Screenshot**: [![insert link here](https://i.imgur.com/B9mrijS.png)
+**Screenshot**: [![insert link here](https://i.imgur.com/sBtAQvV.png)
 
 ---
 
